@@ -21,6 +21,8 @@ namespace Windowsapp
         private static IntPtr _mouseHookID = IntPtr.Zero;
         private const int WM_MOUSEMOVE = 0x0200;
         private const int WM_RBUTTONDOWN = 0x0204;
+        private static DateTime _lastMouseMoveTime = DateTime.MinValue;
+        private const int MOUSE_MOVE_THROTTLE_MS = 16; // ~60fps
 
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
@@ -74,30 +76,67 @@ namespace Windowsapp
         {
             if (nCode >= 0)
             {
-                MSLLHOOKSTRUCT mouseStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
-                Point mousePosition = new Point(mouseStruct.pt.x, mouseStruct.pt.y);
-
-                if (Form1.Instance != null)
+                try
                 {
-                    // Form1のインスタンスがnullでない場合に処理を実行
-                    switch ((int)wParam)
+                    MSLLHOOKSTRUCT mouseStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                    Point mousePosition = new Point(mouseStruct.pt.x, mouseStruct.pt.y);
+
+                    if (Form1.Instance != null && !Form1.Instance.IsDisposed)
                     {
-                        case WM_MOUSEMOVE:
-                            // スレッド間での操作を安全に行うためにInvokeを使用
-                            Form1.Instance.Invoke(new Action(() => {
-                                Form1.Instance.HandleMouseMove(mousePosition);
-                            }));
-                            break;
-                        case WM_LBUTTONDOWN:
-                        // マウスの左ボタンが押されたときの処理
-                        Form1.Instance.MouseClickCount++;
-                        Form1.Instance.Invoke((MethodInvoker)Form1.Instance.UpdateMouseClickCount);
-                        break;
-                        case WM_RBUTTONDOWN:
-                            Form1.Instance.MouseClickCount++;
-                            Form1.Instance.Invoke((MethodInvoker)Form1.Instance.UpdateMouseClickCount);
-                            break;
+                        // Form1のインスタンスがnullでない場合に処理を実行
+                        switch ((int)wParam)
+                        {
+                            case WM_MOUSEMOVE:
+                                // マウス移動のスロットリング（パフォーマンス向上）
+                                DateTime now = DateTime.Now;
+                                if ((now - _lastMouseMoveTime).TotalMilliseconds >= MOUSE_MOVE_THROTTLE_MS)
+                                {
+                                    _lastMouseMoveTime = now;
+                                    // スレッド間での操作を安全に行うためにInvokeを使用
+                                    if (Form1.Instance.InvokeRequired)
+                                    {
+                                        Form1.Instance.BeginInvoke(new Action(() => {
+                                            if (Form1.Instance != null && !Form1.Instance.IsDisposed)
+                                            {
+                                                Form1.Instance.HandleMouseMove(mousePosition);
+                                            }
+                                        }));
+                                    }
+                                    else
+                                    {
+                                        Form1.Instance.HandleMouseMove(mousePosition);
+                                    }
+                                }
+                                break;
+                            case WM_LBUTTONDOWN:
+                                // マウスの左ボタンが押されたときの処理
+                                Form1.Instance.MouseClickCount++;
+                                if (Form1.Instance.InvokeRequired)
+                                {
+                                    Form1.Instance.BeginInvoke((MethodInvoker)Form1.Instance.UpdateMouseClickCount);
+                                }
+                                else
+                                {
+                                    Form1.Instance.UpdateMouseClickCount();
+                                }
+                                break;
+                            case WM_RBUTTONDOWN:
+                                Form1.Instance.MouseClickCount++;
+                                if (Form1.Instance.InvokeRequired)
+                                {
+                                    Form1.Instance.BeginInvoke((MethodInvoker)Form1.Instance.UpdateMouseClickCount);
+                                }
+                                else
+                                {
+                                    Form1.Instance.UpdateMouseClickCount();
+                                }
+                                break;
+                        }
                     }
+                }
+                catch (Exception)
+                {
+                    // 例外を無視して処理を継続
                 }
             }
             return CallNextHookEx(_mouseHookID, nCode, wParam, lParam);
