@@ -55,36 +55,36 @@
             this.lblKeyPressCount.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblKeyPressCount.Location = new System.Drawing.Point(10, 10);
             this.lblKeyPressCount.Name = "lblKeyPressCount";
-            this.lblKeyPressCount.Size = new System.Drawing.Size(180, 55);
+            this.lblKeyPressCount.Size = new System.Drawing.Size(160, 50);
             this.lblKeyPressCount.TabIndex = 0;
-            this.lblKeyPressCount.Text = "⌨️Key入力: 0　 (´・ω・`) ";
+            this.lblKeyPressCount.Text = "⌨️Key: 0　      (´・ω・`) ";
             this.lblKeyPressCount.Click += new System.EventHandler(this.lblKeyPressCount_Click);
             // 
             // lblMouseClickCount
             // 
             this.lblMouseClickCount.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblMouseClickCount.Location = new System.Drawing.Point(10, 70);
+            this.lblMouseClickCount.Location = new System.Drawing.Point(10, 65);
             this.lblMouseClickCount.Name = "lblMouseClickCount";
-            this.lblMouseClickCount.Size = new System.Drawing.Size(180, 55);
+            this.lblMouseClickCount.Size = new System.Drawing.Size(160, 50);
             this.lblMouseClickCount.TabIndex = 1;
-            this.lblMouseClickCount.Text = "クリック回数: 0　 (´・ω・`) ";
+            this.lblMouseClickCount.Text = "クリック回数:   (´・ω・`) ";
             // 
             // lblDistance
             // 
             this.lblDistance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDistance.Location = new System.Drawing.Point(10, 130);
+            this.lblDistance.Location = new System.Drawing.Point(10, 120);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(180, 55);
+            this.lblDistance.Size = new System.Drawing.Size(160, 50);
             this.lblDistance.TabIndex = 2;
-            this.lblDistance.Text = "📏 総移動距離: 0.00 cm";
+            this.lblDistance.Text = "📏 移動距離: 0.00 cm";
             this.lblDistance.Click += new System.EventHandler(this.lblDistance_Click);
             // 
             // lblCpuTemp
             // 
             this.lblCpuTemp.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpuTemp.Location = new System.Drawing.Point(200, 10);
+            this.lblCpuTemp.Location = new System.Drawing.Point(175, 10);
             this.lblCpuTemp.Name = "lblCpuTemp";
-            this.lblCpuTemp.Size = new System.Drawing.Size(180, 55);
+            this.lblCpuTemp.Size = new System.Drawing.Size(160, 50);
             this.lblCpuTemp.TabIndex = 3;
             this.lblCpuTemp.Text = "🌡️CPU :       (´・ω・`) ";
             this.lblCpuTemp.Click += new System.EventHandler(this.lblCpuTemp_Click);
@@ -92,45 +92,45 @@
             // lblMemoryUsage
             // 
             this.lblMemoryUsage.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemoryUsage.Location = new System.Drawing.Point(200, 70);
+            this.lblMemoryUsage.Location = new System.Drawing.Point(175, 65);
             this.lblMemoryUsage.Name = "lblMemoryUsage";
-            this.lblMemoryUsage.Size = new System.Drawing.Size(180, 55);
+            this.lblMemoryUsage.Size = new System.Drawing.Size(160, 50);
             this.lblMemoryUsage.TabIndex = 4;
             this.lblMemoryUsage.Text = "💾 メモリ使用率: (´・ω・`) ";
             // 
             // lblStorageInfo
             // 
             this.lblStorageInfo.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStorageInfo.Location = new System.Drawing.Point(200, 130);
+            this.lblStorageInfo.Location = new System.Drawing.Point(175, 120);
             this.lblStorageInfo.Name = "lblStorageInfo";
-            this.lblStorageInfo.Size = new System.Drawing.Size(180, 55);
+            this.lblStorageInfo.Size = new System.Drawing.Size(160, 50);
             this.lblStorageInfo.TabIndex = 5;
             this.lblStorageInfo.Text = "💿 ストレージ: (´・ω・`) ";
             // 
             // lblGpuUsage
             // 
             this.lblGpuUsage.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGpuUsage.Location = new System.Drawing.Point(390, 10);
+            this.lblGpuUsage.Location = new System.Drawing.Point(340, 10);
             this.lblGpuUsage.Name = "lblGpuUsage";
-            this.lblGpuUsage.Size = new System.Drawing.Size(180, 55);
+            this.lblGpuUsage.Size = new System.Drawing.Size(140, 50);
             this.lblGpuUsage.TabIndex = 6;
             this.lblGpuUsage.Text = "🎮 GPU使用率: (´・ω・`) ";
             // 
             // lblNetworkUsage
             // 
             this.lblNetworkUsage.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNetworkUsage.Location = new System.Drawing.Point(390, 70);
+            this.lblNetworkUsage.Location = new System.Drawing.Point(340, 65);
             this.lblNetworkUsage.Name = "lblNetworkUsage";
-            this.lblNetworkUsage.Size = new System.Drawing.Size(180, 55);
+            this.lblNetworkUsage.Size = new System.Drawing.Size(140, 50);
             this.lblNetworkUsage.TabIndex = 7;
             this.lblNetworkUsage.Text = "📡 NET使用率: (´・ω・`) ";
             // 
             // lblUptime
             // 
             this.lblUptime.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUptime.Location = new System.Drawing.Point(390, 130);
+            this.lblUptime.Location = new System.Drawing.Point(340, 120);
             this.lblUptime.Name = "lblUptime";
-            this.lblUptime.Size = new System.Drawing.Size(180, 55);
+            this.lblUptime.Size = new System.Drawing.Size(140, 50);
             this.lblUptime.TabIndex = 8;
             this.lblUptime.Text = "⏰ 起動時間: (´・ω・`) ";
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(600, 200);
+            this.ClientSize = new System.Drawing.Size(490, 180);
             this.Controls.Add(this.lblUptime);
             this.Controls.Add(this.lblNetworkUsage);
             this.Controls.Add(this.lblGpuUsage);
@@ -154,7 +154,7 @@
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.lblKeyPressCount);
             this.Controls.Add(this.lblMouseClickCount);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Opacity = 0.85D;
             this.Text = "✨ くもぱわー ✨";

@@ -33,6 +33,8 @@ namespace Windowsapp
         
         // DPI情報をキャッシュ
         private float cachedDpiX = 96f; // デフォルト値
+        
+        // 表示モードを通常モードで固定
 
         public Form1()
         {
@@ -119,6 +121,9 @@ namespace Windowsapp
             // 初期表示の更新
             UpdateSystemInfo();
         }
+        
+        
+        
 
         private void lblDistance_Click(object sender, EventArgs e)
         {
@@ -408,6 +413,8 @@ namespace Windowsapp
         {
 
         }
+        
+        
     }
 
 }
