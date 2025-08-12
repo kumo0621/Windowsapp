@@ -15,6 +15,10 @@
         private System.Windows.Forms.Label lblNetworkUsage;
         private System.Windows.Forms.Label lblUptime;
         private System.Windows.Forms.Timer systemInfoTimer;
+        private System.Windows.Forms.Label lblDivider1;
+        private System.Windows.Forms.Label lblDivider2;
+        private System.Windows.Forms.Label lblHDivider1;
+        private System.Windows.Forms.Label lblHDivider2;
 
         /// <summary>
         /// 使用中のリソースをすべてクリーンアップします。
@@ -48,6 +52,10 @@
             this.lblNetworkUsage = new System.Windows.Forms.Label();
             this.lblUptime = new System.Windows.Forms.Label();
             this.systemInfoTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblDivider1 = new System.Windows.Forms.Label();
+            this.lblDivider2 = new System.Windows.Forms.Label();
+            this.lblHDivider1 = new System.Windows.Forms.Label();
+            this.lblHDivider2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblKeyPressCount
@@ -139,12 +147,48 @@
             this.systemInfoTimer.Interval = 2000;
             this.systemInfoTimer.Tick += new System.EventHandler(this.systemInfoTimer_Tick);
             // 
+            // lblDivider1
+            // 
+            this.lblDivider1.BackColor = System.Drawing.Color.Gray;
+            this.lblDivider1.Location = new System.Drawing.Point(170, 10);
+            this.lblDivider1.Name = "lblDivider1";
+            this.lblDivider1.Size = new System.Drawing.Size(2, 160);
+            this.lblDivider1.TabIndex = 9;
+            // 
+            // lblDivider2
+            // 
+            this.lblDivider2.BackColor = System.Drawing.Color.Gray;
+            this.lblDivider2.Location = new System.Drawing.Point(335, 10);
+            this.lblDivider2.Name = "lblDivider2";
+            this.lblDivider2.Size = new System.Drawing.Size(2, 160);
+            this.lblDivider2.TabIndex = 10;
+            // 
+            // lblHDivider1
+            // 
+            this.lblHDivider1.BackColor = System.Drawing.Color.Gray;
+            this.lblHDivider1.Location = new System.Drawing.Point(10, 62);
+            this.lblHDivider1.Name = "lblHDivider1";
+            this.lblHDivider1.Size = new System.Drawing.Size(470, 2);
+            this.lblHDivider1.TabIndex = 11;
+            // 
+            // lblHDivider2
+            // 
+            this.lblHDivider2.BackColor = System.Drawing.Color.Gray;
+            this.lblHDivider2.Location = new System.Drawing.Point(10, 117);
+            this.lblHDivider2.Name = "lblHDivider2";
+            this.lblHDivider2.Size = new System.Drawing.Size(470, 2);
+            this.lblHDivider2.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(490, 180);
+            this.Controls.Add(this.lblHDivider2);
+            this.Controls.Add(this.lblHDivider1);
+            this.Controls.Add(this.lblDivider2);
+            this.Controls.Add(this.lblDivider1);
             this.Controls.Add(this.lblUptime);
             this.Controls.Add(this.lblNetworkUsage);
             this.Controls.Add(this.lblGpuUsage);
@@ -158,7 +202,7 @@
             this.Name = "Form1";
             this.Opacity = 0.85D;
             this.Text = "✨ くもぱわー ✨";
-            this.TopMost = true;
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
