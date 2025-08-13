@@ -198,7 +198,7 @@
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.lblKeyPressCount);
             this.Controls.Add(this.lblMouseClickCount);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Name = "Form1";
             this.Opacity = 0.85D;
             this.Text = "✨ くもぱわー ✨";
